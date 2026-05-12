@@ -39,8 +39,12 @@ hr_lag1, hr_lag2, hr_lag3, hr_lag6, hr_lag12
 
 The following graph was generated using the PC algorithm on lagged glucose (`cbg`) and heart-rate (`hr`) variables from the OhioT1DM dataset.
 
-![Ohio causal graph](ohio_networkx_graph.png)
+<img src="images/ohio_networkx_graph.png" width="500">
 
+## Interpretation
+The learned graph primarily recovered strong temporal self-dependencies within each physiological signal. In particular, glucose lag variables formed a connected temporal structure, indicating that past glucose values remain strongly informative of future glucose dynamics across multiple time scales.
+
+Similarly, heart-rate lag variables formed an independent temporal chain, suggesting persistent autocorrelation in cardiovascular dynamics. No strong cross-modal dependency between heart rate and glucose was identified in this selected window, possibly because glucose autoregressive effects dominated weaker indirect physiological interactions.
 # causal-learn: Learning Causality from Data
 
 Causal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.

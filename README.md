@@ -29,10 +29,12 @@ Since each row corresponds to a 5-minute interval, the following lags were used:
 
 The final input variables were:
 
-```text
+
+
 cbg, hr,
 cbg_lag1, cbg_lag2, cbg_lag3, cbg_lag6, cbg_lag12,
 hr_lag1, hr_lag2, hr_lag3, hr_lag6, hr_lag12
+
 # causal-learn: Learning Causality from Data
 
 Causal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.

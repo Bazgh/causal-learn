@@ -35,6 +35,12 @@ cbg, hr,
 cbg_lag1, cbg_lag2, cbg_lag3, cbg_lag6, cbg_lag12,
 hr_lag1, hr_lag2, hr_lag3, hr_lag6, hr_lag12
 
+## Learned Causal Graph
+
+The following graph was generated using the PC algorithm on lagged glucose (`cbg`) and heart-rate (`hr`) variables from the OhioT1DM dataset.
+
+![Ohio causal graph](ohio_networkx_graph.png)
+
 # causal-learn: Learning Causality from Data
 
 Causal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.

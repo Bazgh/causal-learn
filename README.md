@@ -45,6 +45,14 @@ The following graph was generated using the PC algorithm on lagged glucose (`cbg
 The learned graph primarily recovered strong temporal self-dependencies within each physiological signal. In particular, glucose lag variables formed a connected temporal structure, indicating that past glucose values remain strongly informative of future glucose dynamics across multiple time scales.
 
 Similarly, heart-rate lag variables formed an independent temporal chain, suggesting persistent autocorrelation in cardiovascular dynamics. No strong cross-modal dependency between heart rate and glucose was identified in this selected window, possibly because glucose autoregressive effects dominated weaker indirect physiological interactions.
+
+## Ongoing Work
+
+While this experiment was mainly a toy exploratory exercise to understand how the PC algorithm discovers causal structure, meaningful physiological causal discovery requires substantially longer temporal windows in order to capture delayed and indirect dependencies between variables.
+
+A major limitation of the current experiment is the presence of missing values in the CBG and HR signals, which restricted the analysis to relatively short clean segments. Future work will therefore focus on applying appropriate imputation methods to reconstruct missing physiological measurements and enable causal discovery on longer continuous time intervals.
+
+The remainder of this README corresponds to the original `causal-learn` contributors’ documentation. 
 # causal-learn: Learning Causality from Data
 
 Causal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.

@@ -1,3 +1,38 @@
+# Causal Discovery on OhioT1DM Data
+
+This fork is used as a small exploratory project to understand causal discovery methods, especially the PC algorithm, on physiological time-series data from the OhioT1DM dataset.
+
+## Goal
+
+The goal is to investigate whether causal discovery can recover temporal dependencies between continuous glucose monitoring values and heart-rate signals.
+
+## Data
+
+For this initial experiment, I used one subject from the OhioT1DM dataset and selected only two variables:
+
+- `cbg`: continuous blood glucose
+- `hr`: heart rate
+
+Because both signals contain missing values, I first searched for a continuous time window with the minimum missingness across both variables. The selected window started at index 350 and had 0% missing values.
+
+## Preprocessing
+
+The original time-series data were transformed into a tabular format suitable for the PC algorithm by creating lagged variables.
+
+Since each row corresponds to a 5-minute interval, the following lags were used:
+
+- `lag1`: 5 minutes before
+- `lag2`: 10 minutes before
+- `lag3`: 15 minutes before
+- `lag6`: 30 minutes before
+- `lag12`: 60 minutes before
+
+The final input variables were:
+
+```text
+cbg, hr,
+cbg_lag1, cbg_lag2, cbg_lag3, cbg_lag6, cbg_lag12,
+hr_lag1, hr_lag2, hr_lag3, hr_lag6, hr_lag12
 # causal-learn: Learning Causality from Data
 
 Causal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.

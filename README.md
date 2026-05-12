@@ -39,7 +39,7 @@ hr_lag1, hr_lag2, hr_lag3, hr_lag6, hr_lag12
 
 The following graph was generated using the PC algorithm on lagged glucose (`cbg`) and heart-rate (`hr`) variables from the OhioT1DM dataset.
 
-<img src="images/ohio_networkx_graph.png" width="500">
+<img src="ohio_networkx_graph.png" width="500">
 
 ## Interpretation
 The learned graph primarily recovered strong temporal self-dependencies within each physiological signal. In particular, glucose lag variables formed a connected temporal structure, indicating that past glucose values remain strongly informative of future glucose dynamics across multiple time scales.
